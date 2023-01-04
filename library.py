@@ -11,15 +11,13 @@ def gridInit(xLength = 5, yHeight = 5):
 
     for x in range(xValue):
         grid.append(list(" - " for i in range(yValue)))
-
-    print(grid)
     
 def getCurrentPoint(item):
     if not grid:
         print("grid not yet created! use gridInit(x,y) to create one")
 
     if not item:
-        return
+        print("invalid arguements! use getCurrentPoint(item)")
 
     for y in range(yValue):
         try:
@@ -31,9 +29,9 @@ def getCurrentPoint(item):
                     currentX = x
                     return currentY, currentX
                 except:
-                    pass
+                    print("error using getCurrentPoint()! make sure your arguemnts are correct, if this issue still occurs please open an issue at https://github.com/zoaq1/Grid-Engine/issues")
         except:
-            pass
+            print("error using getCurrentPoint()! make sure your arguemnts are correct, if this issue still occurs please open an issue at https://github.com/zoaq1/Grid-Engine/issues")
 
 def printGrid(showCoordinates = False):
     if not grid:
@@ -52,7 +50,10 @@ def printGrid(showCoordinates = False):
     print("\n")
 
 def gridAdd(x, y, item):
+    if not grid:
+        print("grid not yet created! use gridInit(x,y) to create one")
+
     if not item:
-        return
+        print("invalid arguements! use gridAdd(x,y,symbol")
 
     grid[y][x] = item
