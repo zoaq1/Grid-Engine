@@ -12,26 +12,28 @@ def gridInit(xLength = 5, yHeight = 5):
     for x in range(xValue):
         grid.append(list(" - " for i in range(yValue)))
     
-def getCurrentPoint(item):
-    if not grid:
-        print("grid not yet created! use gridInit(x,y) to create one")
+# not working atm
 
-    if not item:
-        print("invalid arguements! use getCurrentPoint(item)")
+# def getCurrentPoint(item):
+#     if not grid:
+#         print("grid not yet created! use gridInit(x,y) to create one")
 
-    for y in range(yValue):
-        try:
-            grid[y].index(item)
-            currentY = y
-            for x in range(xValue):
-                try:
-                    grid[currentY][x].index(item)
-                    currentX = x
-                    return currentY, currentX
-                except:
-                    print("error using getCurrentPoint()! make sure your arguemnts are correct, if this issue still occurs please open an issue at https://github.com/zoaq1/Grid-Engine/issues")
-        except:
-            print("error using getCurrentPoint()! make sure your arguemnts are correct, if this issue still occurs please open an issue at https://github.com/zoaq1/Grid-Engine/issues")
+#     if not item:
+#         print("invalid arguements! use getCurrentPoint(item)")
+
+#     try:
+#         for y in range(yValue):
+#                 grid[y].index(item)
+#                 currentY = y
+#                 for x in range(xValue):
+#                     try:
+#                         grid[currentY][x].index(item)
+#                         currentX = x
+#                         return currentY, currentX
+#                     except:
+#                         pass
+#     except:
+#         print("error using getCurrentPoint()! make sure your arguemnts are correct, if this issue still occurs please open an issue at https://github.com/zoaq1/Grid-Engine/issues")
 
 def printGrid(showCoordinates = False):
     if not grid:
@@ -47,7 +49,6 @@ def printGrid(showCoordinates = False):
             print(point,end=e)
     if showCoordinates:
         print(getCurrentPoint())
-    print("\n")
 
 def gridAdd(x, y, item):
     if not grid:
